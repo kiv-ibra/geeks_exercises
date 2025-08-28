@@ -65,3 +65,19 @@ OR id=3;
 --4. Fetch the students whose birth_day are equal to or come after 1/01/2000.  
 select first_name from student 
 where birth_day >= '2000-01-01';
+
+--5. Fetch the first_names, last_names and birth_dates of the students.
+--1. Fetch the first four students. You have to order the four students alphabetically by last_name.
+select first_name, last_name, birth_day from student
+order by last_name ASC
+LIMIT 4;
+
+--2. Fetch the details of the youngest student.
+select first_name, last_name, birth_day from student
+order by birth_day DESC
+LIMIT 1;
+
+--3. Fetch three students skipping the first two students.
+SELECT * FROM student
+ORDER BY first_name
+LIMIT 3 OFFSET 2;
